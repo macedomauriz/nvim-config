@@ -3,8 +3,8 @@ local M = {}
 
 M.general = {
   n = {
-    [">"] = { "Lzz", "Half page down", opts = { nowait = true } },
-    ["<"] = { "Hzz", "Half page up", opts = { nowait = true } },
+    [">"] = { "Lzz", "Half page down" },
+    ["<"] = { "Hzz", "Half page up" },
     ["n"] = { "nzz", "Put cursor in the middle of the screen on search (n)" },
     ["N"] = { "nzz", "Put cursor in the middle of the screen on search (N)" },
     ["<leader>h"] = { "<C-w>h", "Window left" },
@@ -28,9 +28,6 @@ M.general = {
   },
   t = {
     ["<C-x>"] = { '<C-\\><C-n> <CMD>lua require("nvterm.terminal").toggle "float"<CR>', "Exit floating terminal" },
-  },
-  v = {
-    [">"] = { ">gv", "indent" },
   },
 }
 

@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "sweetpastel",
-  theme_toggle = { "sweetpastel", "one_light" },
+  theme = "ashes",
+  theme_toggle = { "ashes", "one_light" },
 
   statusline = {
     separator_style = "arrow",

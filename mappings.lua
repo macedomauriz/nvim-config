@@ -25,6 +25,12 @@ M.general = {
       end,
       "Toggle floating term",
     },
+    ["<leader>a"] = {
+      function()
+        require("lspimport").import()
+      end,
+      "Pyright import",
+    },
   },
   t = {
     ["<C-x>"] = { '<C-\\><C-n> <CMD>lua require("nvterm.terminal").toggle "float"<CR>', "Exit floating terminal" },

@@ -12,7 +12,8 @@ null_ls.setup {
     formatting.beautysh,
     diagnostics.eslint_d,
     diagnostics.flake8,
-    diagnostics.shellcheck,
+    diagnostics.pyright,
+    -- diagnostics.shellcheck, -- commented because the lsp uses it out of the box (bashls)
   },
   lsp_formatting = function(bufnr)
     vim.lsp.buf.format {

@@ -6,6 +6,27 @@ local plugins = {
   -- Override plugin definition options
 
   {
+    "NvChad/nvim-colorizer.lua",
+    init = function()
+      require("core.utils").lazy_load "nvim-colorizer.lua"
+    end,
+    config = function(_, opts)
+      require("colorizer").setup(opts)
+
+      -- Additional setup for Tailwind CSS support
+      require("colorizer").setup {
+        user_default_options = {
+          tailwind = true,
+        },
+      }
+
+      -- execute colorizer as soon as possible
+      vim.defer_fn(function()
+        require("colorizer").attach_to_buffer(0)
+      end, 0)
+    end,
+  },
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       -- format & linting
@@ -53,7 +74,7 @@ local plugins = {
   {
     "szw/vim-maximizer",
     keys = {
-      { "<leader>mm", "<CMD>MaximizerToggle<CR>", desc = "Maximizer", mode = "n" },
+      { "<leader>m", "<CMD>MaximizerToggle<CR>", desc = "Maximizer", mode = "n" },
     },
   },
   {

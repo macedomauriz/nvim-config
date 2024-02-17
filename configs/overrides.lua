@@ -26,8 +26,9 @@ M.mason = {
     "lua-language-server",
     "stylua",
 
-    "css-lsp",
     "html-lsp",
+    "css-lsp",
+    "tailwindcss-language-server",
     "typescript-language-server",
     "prettierd",
     "eslint_d",

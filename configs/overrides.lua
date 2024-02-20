@@ -46,6 +46,15 @@ M.blankline = {
   show_first_indent_level = true,
 }
 
+M.cmp = function(_, opts)
+  local format_style = opts.formatting.format
+
+  opts.formatting.format = function(entry, item)
+    format_style(entry, item)
+    return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+  end
+end
+
 -- git support in nvimtree
 M.nvimtree = {
   git = {

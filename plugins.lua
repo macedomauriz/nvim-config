@@ -17,6 +17,8 @@ local plugins = {
       require("colorizer").setup {
         user_default_options = {
           tailwind = true,
+          mode = "background",
+          always_update = true,
         },
       }
 
@@ -44,6 +46,10 @@ local plugins = {
   },
 
   -- override plugin configs
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp,
+  },
   {
     "williamboman/mason.nvim",
     opts = overrides.mason,
@@ -83,6 +89,15 @@ local plugins = {
   },
   {
     "miyakogi/conoline.vim",
+    event = "BufEnter",
+  },
+  {
+    "roobert/tailwindcss-colorizer-cmp.nvim",
+    config = function()
+      require("tailwindcss-colorizer-cmp").setup {
+        color_square_width = 14,
+      }
+    end,
     event = "BufEnter",
   },
   {

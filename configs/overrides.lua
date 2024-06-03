@@ -12,6 +12,8 @@ M.treesitter = {
     "c",
     "markdown",
     "markdown_inline",
+    "prisma",
+    "python",
   },
   indent = {
     enable = true,
@@ -39,6 +41,12 @@ M.mason = {
     "flake8",
     "pyright",
     "black",
+
+    "dockerfile-language-server",
+    "docker-compose-language-service",
+    "eslint-lsp",
+    "shellcheck",
+    "prisma-language-server",
   },
 }
 

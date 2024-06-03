@@ -8,10 +8,10 @@ null_ls.setup {
   sources = {
     formatting.prettierd,
     formatting.stylua,
-    formatting.black,
+    formatting.black.with { extra_args = { "--line-length", "79" } },
     formatting.beautysh,
     diagnostics.eslint_d,
-    diagnostics.flake8,
+    diagnostics.flake8.with { extra_args = { "--max-line-length", "79" } },
     -- diagnostics.shellcheck, -- commented because the lsp uses it out of the box (bashls)
   },
   lsp_formatting = function(bufnr)

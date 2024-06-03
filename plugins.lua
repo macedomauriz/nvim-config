@@ -112,8 +112,13 @@ local plugins = {
   },
   {
     "folke/trouble.nvim",
+    commit = "1f297073f7ef90a9311ab3186857c427cd61a026",
     keys = {
-      { "<leader>w", "<CMD>TroubleToggle<CR>", desc = "Trouble", mode = "n" },
+      {
+        "<leader>w",
+        "<CMD>TroubleToggle<CR>",
+        desc = "Diagnostics (Trouble)",
+      },
     },
   },
   {
@@ -121,6 +126,23 @@ local plugins = {
     keys = {
       { "<leader>S", "<CMD>Spectre<CR>", desc = "Global replace", mode = "n" },
     },
+  },
+
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    config = function()
+      require("ts_context_commentstring").setup {
+        enable_autocmd = false,
+      }
+    end,
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
   },
 }
 

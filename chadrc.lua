@@ -5,8 +5,8 @@ local M = {}
 local highlights = require "custom.highlights"
 
 M.ui = {
-  theme = "sweetpastel",
-  theme_toggle = { "sweetpastel", "one_light" },
+  theme = "nightlamp",
+  theme_toggle = { "nightlamp", "one_light" },
 
   cmp = {
     selected_item_bg = "simple", -- colored / simple

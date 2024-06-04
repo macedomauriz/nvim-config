@@ -44,7 +44,6 @@ local plugins = {
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
-
   -- override plugin configs
   {
     "hrsh7th/nvim-cmp",
@@ -58,15 +57,21 @@ local plugins = {
     "lukas-reineke/indent-blankline.nvim",
     opts = overrides.blankline,
   },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
   },
-
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
   },
 
   -- Install a plugin
@@ -137,10 +142,11 @@ local plugins = {
     end,
   },
   {
-    "numToStr/Comment.nvim",
+    "supermaven-inc/supermaven-nvim",
+    lazy = false,
     config = function()
-      require("Comment").setup {
-        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      require("supermaven-nvim").setup {
+        disable_inline_completion = false,
       }
     end,
   },

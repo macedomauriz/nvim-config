@@ -63,6 +63,21 @@ M.cmp = function(_, opts)
   end
 end
 
+local cmp_ok, cmp = pcall(require, "cmp")
+if cmp_ok then
+  M.cmp = {
+    formatting = {},
+    sources = {
+      { name = "supermaven" },
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
+      { name = "buffer" },
+      { name = "nvim_lua" },
+      { name = "path" },
+    },
+  }
+end
+
 -- git support in nvimtree
 M.nvimtree = {
   git = {

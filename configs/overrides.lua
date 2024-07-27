@@ -45,7 +45,6 @@ M.mason = {
     "dockerfile-language-server",
     "docker-compose-language-service",
     "eslint-lsp",
-    "shellcheck",
     "prisma-language-server",
   },
 }
